@@ -5,6 +5,8 @@
 
 
 function submitForm(event) {
+
+
   event.preventDefault();
 
   //Nb => inputs of the user
@@ -37,9 +39,9 @@ let submissionForm = $(".box2 form");
 submissionForm.submit(submitForm);
 
 $(".box2 input").focus(function () {
-  if ($(".errorDisplay").text().length > 1) {
-    $(".errorDisplay").remove();
-  }
+//   if ($(".errorDisplay").text().length > 1) {
+//     $(".errorDisplay").remove();
+//   }
 
   $(this)
     .css({
