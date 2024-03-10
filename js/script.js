@@ -1,0 +1,1 @@
+alert("start studying for week 2")

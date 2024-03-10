@@ -2,3 +2,7 @@
     background-color:azure;
     color: brown;
 }
+.pink {
+    background-color: pink;
+    border: solid 5px black;
+}
