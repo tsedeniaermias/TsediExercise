@@ -1,5 +1,75 @@
 // alert("start studying for week 2")
 
+let fomm = $("#formm");
+
+
+function submit(event) {
+  event.preventDefault();
+  var errors = [];
+
+  //Nb => inputs of the user
+  vall1 = $("input[name='third-value']").val();
+  vall2 = $("input[name='fourth-value']").val();
+  vall3 = $("input[name='fifth-value']").val();
+
+  if (vall1.length > 0 && vall2.length > 0 && vall3.length) {
+    $("#formm").empty();
+    fomm.append(
+      $("<div></div>")
+        .html(`${vall1} ${vall2} <br/> ${vall3}`)
+        .css({ color: "darkcyan" })
+    );
+    $(".box h4").text("registered");
+  } else {
+    if (vall1.length == 0) {
+      errors.push("First name field is required");
+    }
+
+    if (vall2.length == 0) {
+      errors.push("Last name field is required");
+    }
+
+    if (vall3.length == 0) {
+      errors.push("email field is required");
+    }
+  }
+
+  if (errors.length > 0 && $(".errorDisplay").text().length == 0) {
+    let ErrorsDisplay = $(".errorDisplay");
+
+    ErrorsDisplay.css({
+      border: "1px solid red",
+      "margin-bottom": "20px",
+      "font-size": "10px",
+      color: "lightcoral",
+      "text-align": "center",
+    });
+
+    for (var i = 0; i < errors.length; i++) {
+      ErrorsDisplay.append(errors[i] + "<br>");
+    }
+  }
+}
+
+
+$("input").focus(function () {  
+        if ($(".errorDisplay").text().length>1) {
+          $(".errorDisplay").remove();
+        }
+
+        $(this).css({ border: "solid blue","border-width":"1px 1px 2px ","background-color":""}) 
+        
+});
+
+
+$("input").blur(function (e) {
+    $(this).css({ border: "1px solid"});
+});
+
+
+
+fomm.submit(submit);
+
 
 
 
