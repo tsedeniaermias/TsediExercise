@@ -37,13 +37,6 @@ function submit(event) {
   if (errors.length > 0 && $(".errorDisplay").text().length == 0) {
     let ErrorsDisplay = $(".errorDisplay");
 
-    ErrorsDisplay.css({
-      border: "1px solid red",
-      "margin-bottom": "20px",
-      "font-size": "10px",
-      color: "lightcoral",
-      "text-align": "center",
-    });
 
     for (var i = 0; i < errors.length; i++) {
       ErrorsDisplay.append(errors[i] + "<br>");
